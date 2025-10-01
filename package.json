@@ -1,0 +1,26 @@
+{
+  "name": "vp_projekt_2-veeb",
+  "version": "1.0.0",
+  "description": "Tunnitöö",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://MarkusTLU@github.com/MarkusTLU/VP_Projekt_2-Veeb.git"
+  },
+  "keywords": [
+    "Tallinna",
+    "Ülikool"
+  ],
+  "author": "Markus Prokuda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkusTLU/VP_Projekt_2-Veeb/issues"
+  },
+  "homepage": "https://github.com/MarkusTLU/VP_Projekt_2-Veeb#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
