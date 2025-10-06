@@ -9,12 +9,14 @@
   <h1>Markus P, veebiprogrammeerimine</h1>
   <p>See leht on loodud <a href="https://www.tlu.ee">Tallinna Ülikoolis</a> veebiprogrammeerimise kursusel ega oma mõistlikku sisu</p>
   <hr>
-  <h2>Siin lehel leiad</h2>
   <ul>
-    <li><a href="/timenow">Ajainfo</a></li>
-    <li><a href="/vanasonad">Valik Eesti tuntuid vanasõnu</a></li>
-    <li><a href="/regvisit">Registreeri oma külastus</a></li>
-    <li><a href="/visitlog">Külastajad</a></li>
+    <li><a href="/">Avalehele</a></li>
+    <li><a href="/regvisit">Registreeri uus külastus</a></li>
+  </ul>
+  <ul>
+    <% listData.filter((guest) => guest != "").forEach(function(listItem){ %>
+      <li><%= listItem %></li>
+    <% }); %>
   </ul>
 </body>
 </html>
