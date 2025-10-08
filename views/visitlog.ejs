@@ -13,10 +13,10 @@
     <li><a href="/">Avalehele</a></li>
     <li><a href="/regvisit">Registreeri uus külastus</a></li>
   </ul>
-  <ul>
+  <ol>
     <% listData.filter((guest) => guest != "").forEach(function(listItem){ %>
       <li><%= listItem %></li>
     <% }); %>
-  </ul>
+  </ol>
 </body>
 </html>
