@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <title>Markus P, veebiprogrammeerimine</title>
+</head>
+<body>
+  <img src="/images/vp_banner_2025_AA.jpg" alt="Kursuse banner">
+  <h1>Markus P, veebiprogrammeerimine</h1>
+  <p>See leht on loodud <a href="https://www.tlu.ee">Tallinna Ãœlikoolis</a> veebiprogrammeerimise kursusel ega oma mÃµistlikku sisu</p>
+  <hr>
+  <ul>
+    <li><a href="/">Avalehele</a></li>
+    <li><a href="/eestifilm">Eesti filmide avaleht</a></li>
+  </ul>
+  <h2>Seoste tegemine</h2>
+<form method="POST">
+<select id="personSelect" name="personSelect">
+  <option selected disabled>Vali isik</option>
+    <% personList.forEach(function(listItem) { %>
+        <option value=<%= listItem.id %>><%= listItem.first_name + " " + listItem.last_name %></option>
+    <% }); %>
+</select>
+<select id="movieSelect" name="movieSelect">
+  <option selected disabled>Vali film</option>
+    <% movieList.forEach(function(listItem) { %>
+        <option value=<%= listItem.id %>><%= listItem.title %></option>
+    <% }); %>
+</select>
+<select id="positionSelect" name="positionSelect">
+  <option selected disabled>Vali ametikoht</option>
+    <% positionList.forEach(function(listItem) { %>
+        <option value=<%= listItem.id %>><%= listItem.position_name %></option>
+    <% }); %>
+</select>
+ <input id="seosteSubmit" name="seosteSubmit" type="submit" value="Salvesta">
+</form>
+</body>
+</html>

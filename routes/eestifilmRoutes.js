@@ -8,7 +8,11 @@ const {
 	filmPeopleAddPost,
 	filmPosition,
 	filmPositionAdd,
-	filmPositionAddPost
+	filmPositionAddPost,
+	eestifilmAdd,
+	eestifilmAddPost,
+	seosedAdd,
+	seosedAddPost
 } = require("../controllers/eestifilmControllers");
 
 router.route("/").get(filmHomePage);
@@ -18,5 +22,9 @@ router.route("/filmiinimesed_add").post(filmPeopleAddPost);
 router.route("/ametinimetused").get(filmPosition);
 router.route("/ametinimetused_add").get(filmPositionAdd);
 router.route("/ametinimetused_add").post(filmPositionAddPost);
+router.route("/eestifilm_add").get(eestifilmAdd);
+router.route("/eestifilm_add").post(eestifilmAddPost)
+router.route("/seosed").get(seosedAdd)
+router.route("/seosed").post(seosedAddPost)
 
 module.exports = router;

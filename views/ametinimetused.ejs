@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <title>Markus P, veebiprogrammeerimine</title>
+</head>
+<body>
+  <img src="/images/vp_banner_2025_AA.jpg" alt="Kursuse banner">
+  <h1>Markus P, veebiprogrammeerimine</h1>
+  <p>See leht on loodud <a href="https://www.tlu.ee">Tallinna Ãœlikoolis</a> veebiprogrammeerimise kursusel ega oma mÃµistlikku sisu</p>
+  <hr>
+  <ul>
+    <li><a href="/">Avalehele</a></li>
+    <li><a href="/eestifilm">Filmidega seotud töökohad</a></li>
+  </ul>
+  <h2>Filmidega seotud töökohad</h2>
+<ul><% positionList.forEach(function(listItem) { %>
+  <li><%= listItem.position_name %> <%= listItem.description %></li>
+  <% }); %>
+</ul>
+</body>
+</html>

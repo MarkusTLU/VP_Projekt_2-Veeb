@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <title>Markus P, veebiprogrammeerimine</title>
+</head>
+<body>
+  <img src="/images/vp_banner_2025_AA.jpg" alt="Kursuse banner">
+  <h1>Markus P, veebiprogrammeerimine</h1>
+  <p>See leht on loodud <a href="https://www.tlu.ee">Tallinna Ãœlikoolis</a> veebiprogrammeerimise kursusel ega oma mÃµistlikku sisu</p>
+  <hr>
+  <ul>
+    <li><a href="/">Avalehele</a></li>
+    <li><a href="/eestifilm">Eesti filmide avaleht</a></li>
+  </ul>
+  <h2>Eesti filmidega seotud inimeste lisamine</h2>
+  <form method="POST">
+    <label for="titleInput">Pane siia filmi nimi</label>
+    <input id="titleInput" type="text" name="titleInput" placeholder="Filmi nimi" required>
+    <input id="productionYearInput" type="text" name="productionYearInput" placeholder="Tegemise aasta" required type="date" required>
+    <br>
+    <label for="durationInput">Filmi kestus</label>
+    <input id="durationInput" name="durationInput" placeholder="Filmi kestus" required>
+    <label for="descriptionInput">Filmi kirjeldus</label>
+    <input id="descriptionInput" name="descriptionInput">
+    <input id="movieSubmit" name="movieSubmit" type="submit" value="Salvesta">
+  </form>
+  <p><%= notice %></p>
+</ul>
+</body>
+</html>
