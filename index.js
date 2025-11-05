@@ -7,7 +7,8 @@ const visitRef = "public/txt/visitlog.txt";
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: false}));
+//kui vormist tuleb vaid tekst, siis false, kui muud ka, siis true
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", (req, res)=>{
     res.render("index")
@@ -60,5 +61,11 @@ app.get("/visitlog", (req, res)=>{
 //Eesti filmi marsruudid
 const eestifilmRouter = require("./routes/eestifilmRoutes");
 app.use("/eestifilm", eestifilmRouter);
+
+
+//Galeriipildi üleslaadimise marsruudid
+const galleryphotouploadRoutes = require("./routes/galleryphotouploadRoutes");
+app.use("/galleryphotoupload", galleryphotouploadRoutes);
+
 
 app.listen(5306);

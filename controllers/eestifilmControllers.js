@@ -218,6 +218,8 @@ const seosedAddPost = async (req, res)=>{
 	}
 }
 
+
+
 module.exports = {
 	filmHomePage,
 	filmPeople,
