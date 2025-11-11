@@ -5,13 +5,45 @@ const dateEt = require("./src/dateTimeET");
 const textRef = "public/txt/vanasonad.txt";
 const visitRef = "public/txt/visitlog.txt";
 const app = express();
+const mysql = require("mysql2/promise");
+const dbInfo = require("../../vp2025config");
+
+const dbConfmarkusp = {
+	host: dbInfo.configData.host,
+	user: dbInfo.configData.user,
+	password: dbInfo.configData.passWord,
+	database: dbInfo.configData.dataBase
+};
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 //kui vormist tuleb vaid tekst, siis false, kui muud ka, siis true
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get("/", (req, res)=>{
-    res.render("index")
+app.get("/", async (req, res)=>{
+	let conn;
+	const sqlReq = "SELECT filename, alttext FROM galleryphotos WHERE id=(SELECT MAX(id) FROM galleryphotos WHERE privacy=? AND deleted IS NULL)";
+	try {
+		conn = await mysql.createConnection(dbConfmarkusp);
+		console.log("Andmebaasi �hendus loodud!");
+		const [result] = await conn.execute(sqlReq, [3]);
+		if(result.length == 0){
+			res.render("index", {pilt_avalehel: "", pildi_tekst: "Pilti ei ole veel lisatud."})
+		}
+		else {
+			const filepath = "/gallery/normal/" + result[0].filename
+			res.render("index", {pilt_avalehel: filepath, pildi_tekst: result[0].alttext})
+		}
+	}
+	catch(err) {
+		console.log("Viga: " + err);
+	}
+	finally {
+			if(conn) {
+			await conn.end();
+			console.log("Andmebaasi �hendus suletud!");
+		}
+	}
 });
 
 app.get("/timenow", (req, res)=>{

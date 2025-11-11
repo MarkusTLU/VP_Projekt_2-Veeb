@@ -17,6 +17,11 @@
     <li><a href="/visitlog">Külastajad</a></li>
     <li><a href="/eestifilm">Eesti filmid</a></li>
     <li><a href="/galleryphotoupload">Galeriipiltide üleslaadimine</a></li>
+    <% if(pilt_avalehel != ""){ %>
+    <img src= <%=pilt_avalehel %> alt= <%= pildi_tekst %>></img>
+    <% } else { %>
+      <%= pildi_tekst %>
+      <% } %>
   </ul>
 </body>
 </html>

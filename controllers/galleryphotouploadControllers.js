@@ -30,8 +30,9 @@ const galleryphotouploadPagePost = async (req, res)=>{
 		const fileName = "vp_" + Date.now() + ".jpg";
 		console.log(fileName)
 		await fs.rename(req.file.path, req.file.destination + fileName);
+		
 		//loon normaalmöödus foto (800x600)
-		await sharp(req.file.destination + fileName).resize(800,600).jpeg({quality: 90}).toFile("./public/gallery/normal/" + fileName);
+		await sharp(req.file.destination + fileName).composite([{ input:"./public/gallery/watermark/vp_logo_small.png", gravity: 'southeast' }]).resize(800,600).jpeg({quality: 90}).toFile("./public/gallery/normal/" + fileName);
 		//loon pisipildi (100x100)
 		await sharp(req.file.destination + fileName).resize(100,100).jpeg({quality: 90}).toFile("./public/gallery/thumbs/" + fileName);
 		conn = await mysql.createConnection(dbConf);
