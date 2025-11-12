@@ -99,5 +99,9 @@ app.use("/eestifilm", eestifilmRouter);
 const galleryphotouploadRoutes = require("./routes/galleryphotouploadRoutes");
 app.use("/galleryphotoupload", galleryphotouploadRoutes);
 
+//Fotogalerii marsruudid
+const photogalleryRoutes = require("./routes/photogalleryRoutes");
+app.use("/photogallery", photogalleryRoutes);
+
 
 app.listen(5306);
