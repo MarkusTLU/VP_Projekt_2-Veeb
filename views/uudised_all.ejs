@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <title>Markus P, veebiprogrammeerimine</title>
+  <link rel="stylesheet" href="/style/gallery.css">
+  <script src="/script/gallery.js" defer></script>
+</head>
+<body>
+  <img src="images/vp_banner_2025_AA.jpg" alt="Kursuse banner">
+  <h1>Markus P, veebiprogrammeerimine</h1>
+  <p>See leht on loodud <a href="https://www.tlu.ee">Tallinna Ülikoolis</a> veebiprogrammeerimise kursusel ega oma mõistlikku sisu</p>
+  <hr>
+  <ul>
+    <li><a href="/">Avalehele</a></li>
+  </ul>
+  <h2>Uudised</h2>
+  <dialog id="modal" class="modalarea">
+    <span id="modalClose" class="modalclose">&times;</span>
+    <div class="modalhorizontal">
+      <div class="modalvertical">
+        <p id="modalCaption"></p>
+        <img id="modalImage" src="/images/empty.png" alt="Uudise pilt">
+      </div>
+    </div>
+  </dialog>
+  <div id="news" class="news">
+    <%console.log(newsData)%>
+  <% newsData.forEach(function(image){ %>
+    <img src="<%=imagehref%><%=image.src%>" alt="<%=image.alt%>" class="news" data-filename="<%=image.src%>"> 
+  <% }); %>
+  </div>
+</body>
+</html>

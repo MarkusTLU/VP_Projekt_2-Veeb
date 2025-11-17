@@ -103,5 +103,9 @@ app.use("/galleryphotoupload", galleryphotouploadRoutes);
 const photogalleryRoutes = require("./routes/photogalleryRoutes");
 app.use("/photogallery", photogalleryRoutes);
 
+//Uudiste marsruudid
+const uudisedRoutes = require("./routes/uudisedRoutes");
+app.use("/uudised", uudisedRoutes);
+
 
 app.listen(5306);

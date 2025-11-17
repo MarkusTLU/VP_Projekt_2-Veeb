@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <title>Markus P, veebiprogrammeerimine</title>
+</head>
+<body>
+  <img src="/images/vp_banner_2025_AA.jpg" alt="Kursuse banner">
+  <h1>Markus P, veebiprogrammeerimine</h1>
+  <p>See leht on loodud <a href="https://www.tlu.ee">Tallinna Ülikoolis</a> veebiprogrammeerimise kursusel ega oma mõistlikku sisu</p>
+  <hr>
+  <ul>
+    <li><a href="/">Avalehele</a></li>
+    <li><a href="/uudised">Uudiste avaleht</a></li>
+  </ul>
+  <h2>Uudiste lisamine</h2>
+  <form method="POST">
+    <label for="newsTitle">Pane siia uudise pealkiri</label>
+    <input id="newsTitle" type="text" name="newsTitle" placeholder="Uudise pealkiri" required>
+    <br>
+    <textarea id="positionDescriptionInput" name="positionDescriptionInput" cols="100" rows="10" maxlength="1000" placeholder="Uudise tekst"></textarea>
+    <input id="newsSubmit" name="newsSubmit" type="submit" value="Salvesta">
+    <br>
+    <label for="photoInput">Vali pildifail</label>
+    <input id="photoInput" name="photoInput" type="file">
+    <br>
+    <label for="altInput">Lisa alternatiivtekst</label>
+    <input id="altInput" name="altInput" type="text" placeholder="Sellel fotol on...">
+    <br>
+    <label for="expiredInput">Aegumiskuupäev</label>
+    <input id="expiredInput" name="expiredInput" type="date">
+    <br>
+    <input id="userId" name="userId" type="hidden" value="1">
+  </form>
+</ul>
+</body>
+</html>
